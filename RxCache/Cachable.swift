@@ -13,7 +13,7 @@ public protocol Cachable {
     associatedtype Key
     associatedtype Value
     
-    var cache: AnyCachable<Key, Value> { get }
+    var cache: AnyCacheable<Key, Value> { get }
     /// Delete a single value associated with the given key.
     /// - parameter key: Key to delete.
     /// - returns: True if the key was deleted.
@@ -34,7 +34,7 @@ public protocol Cachable {
 }
 
 extension Cachable {
-    public var cache: AnyCachable<Key, Value> {
+    public var cache: AnyCacheable<Key, Value> {
         return .init(self)
     }
     

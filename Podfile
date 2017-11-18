@@ -6,7 +6,7 @@ target 'RxCache' do
   use_frameworks!
 
   # Pods for RxCache
-  pod 'RxSwift'
+  pod 'RxSwift', '~> 4.0'
 
   target 'RxCacheTests' do
     inherit! :search_paths

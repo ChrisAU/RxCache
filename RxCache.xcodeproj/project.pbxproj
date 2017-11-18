@@ -11,7 +11,7 @@
 		8301F2991F116F0900EA996B /* CompositeCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8301F2981F116F0900EA996B /* CompositeCacheTests.swift */; };
 		8301F29B1F118C6000EA996B /* UserDefaultsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8301F29A1F118C6000EA996B /* UserDefaultsCache.swift */; };
 		8301F29D1F118FA000EA996B /* UserDefaultsCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8301F29C1F118FA000EA996B /* UserDefaultsCacheTests.swift */; };
-		8319EF2E1F1264A20036C5B0 /* AnyCachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8319EF2D1F1264A20036C5B0 /* AnyCachable.swift */; };
+		8319EF2E1F1264A20036C5B0 /* AnyCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8319EF2D1F1264A20036C5B0 /* AnyCacheable.swift */; };
 		83BF0C891F11534600F865BA /* RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BF0C7F1F11534600F865BA /* RxCache.framework */; };
 		83BF0C901F11534600F865BA /* RxCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 83BF0C821F11534600F865BA /* RxCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83BF0CA11F11538700F865BA /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C991F11538700F865BA /* MemoryCache.swift */; };
@@ -43,7 +43,7 @@
 		8301F2981F116F0900EA996B /* CompositeCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeCacheTests.swift; sourceTree = "<group>"; };
 		8301F29A1F118C6000EA996B /* UserDefaultsCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsCache.swift; sourceTree = "<group>"; };
 		8301F29C1F118FA000EA996B /* UserDefaultsCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsCacheTests.swift; sourceTree = "<group>"; };
-		8319EF2D1F1264A20036C5B0 /* AnyCachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCachable.swift; sourceTree = "<group>"; };
+		8319EF2D1F1264A20036C5B0 /* AnyCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyCacheable.swift; sourceTree = "<group>"; };
 		83BF0C7F1F11534600F865BA /* RxCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BF0C821F11534600F865BA /* RxCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxCache.h; sourceTree = "<group>"; };
 		83BF0C831F11534600F865BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				83BF0C821F11534600F865BA /* RxCache.h */,
 				83BF0C9E1F11538700F865BA /* CacheError.swift */,
-				8319EF2D1F1264A20036C5B0 /* AnyCachable.swift */,
+				8319EF2D1F1264A20036C5B0 /* AnyCacheable.swift */,
 				83BF0C9A1F11538700F865BA /* CompositeCache.swift */,
 				83BF0C991F11538700F865BA /* MemoryCache.swift */,
 				8301F29A1F118C6000EA996B /* UserDefaultsCache.swift */,
@@ -282,13 +282,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxCache-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		175BA98AE389229B7924C646 /* [CP] Copy Pods Resources */ = {
@@ -327,13 +330,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxCacheTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9D19A2182E687FE5CDF490D /* [CP] Embed Pods Frameworks */ = {
@@ -342,9 +348,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxCacheTests/Pods-RxCacheTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -359,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83BF0CA51F11538700F865BA /* Limitable.swift in Sources */,
-				8319EF2E1F1264A20036C5B0 /* AnyCachable.swift in Sources */,
+				8319EF2E1F1264A20036C5B0 /* AnyCacheable.swift in Sources */,
 				83BF0CA61F11538700F865BA /* CacheError.swift in Sources */,
 				83BF0CA71F11538700F865BA /* Expirable.swift in Sources */,
 				83BF0CA41F11538700F865BA /* Cachable.swift in Sources */,

@@ -13,19 +13,19 @@ public struct CompositeCache<K, V>: Cachable, Purgeable {
     public typealias Key = K
     public typealias Value = V
     
-    private let sequence: Observable<AnyCachable<Key, Value>>
+    private let sequence: Observable<AnyCacheable<Key, Value>>
     
     public init<C: Cachable>(caches: [C]) where C.Key == Key, C.Value == Value {
         let observables = caches.map({ $0.cache }).map(Observable.just)
         sequence = Observable.concat(observables)
     }
     
-    public init(caches: [AnyCachable<Key, Value>]) {
+    public init(caches: [AnyCacheable<Key, Value>]) {
         let observables = caches.map(Observable.just)
         sequence = Observable.concat(observables)
     }
     
-    private func executeFirst<U>(_ block: @escaping (Observable<U>?, AnyCachable<Key, Value>) -> Observable<U>) -> Observable<U> {
+    private func executeFirst<U>(_ block: @escaping (Observable<U>?, AnyCacheable<Key, Value>) -> Observable<U>) -> Observable<U> {
         return sequence
             .reduce(nil) { (result, cache) -> Observable<U> in
                 guard let latestResult = result else {
@@ -36,7 +36,7 @@ public struct CompositeCache<K, V>: Cachable, Purgeable {
             .flatMap({ $0! })   // Force unwrap value, error would have been thrown if unsuccessful
     }
     
-    private func executeAll<U>(_ block: @escaping (Observable<U>?, AnyCachable<Key, Value>) -> Observable<U>) -> Observable<U> {
+    private func executeAll<U>(_ block: @escaping (Observable<U>?, AnyCacheable<Key, Value>) -> Observable<U>) -> Observable<U> {
         return sequence
             .reduce(nil) { (result, cache) -> Observable<U> in
                 guard let latestResult = result else {

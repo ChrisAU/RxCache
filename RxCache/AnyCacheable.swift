@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class AnyCachable<K, V>: Cachable, Countable, Limitable, Purgeable {
+public class AnyCacheable<K, V>: Cachable, Countable, Limitable, Purgeable {
     public typealias Key = K
     public typealias Value = V
     
