@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public struct UserDefaultsCache<V>: Cachable {
+public struct UserDefaultsCache<V>: Cacheable {
     public typealias Key = String
     public typealias Value = V
     

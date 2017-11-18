@@ -1,5 +1,5 @@
 //
-//  Cachable.swift
+//  Cacheable.swift
 //  RxCache
 //
 //  Created by Chris Nevin on 08/07/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public protocol Cachable {
+public protocol Cacheable {
     associatedtype Key
     associatedtype Value
     
@@ -33,7 +33,7 @@ public protocol Cachable {
     func set(key: Key, value: Value) -> Observable<Value>
 }
 
-extension Cachable {
+extension Cacheable {
     public var cache: AnyCacheable<Key, Value> {
         return .init(self)
     }

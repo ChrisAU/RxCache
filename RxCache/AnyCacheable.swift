@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class AnyCacheable<K, V>: Cachable, Countable, Limitable, Purgeable {
+public class AnyCacheable<K, V>: Cacheable, Countable, Limitable, Purgeable {
     public typealias Key = K
     public typealias Value = V
     
@@ -21,7 +21,7 @@ public class AnyCacheable<K, V>: Cachable, Countable, Limitable, Purgeable {
     
     public let limit: Int
     
-    init<T: Cachable>(_ cachable: T) where T.Key == Key, T.Value == Value {
+    init<T: Cacheable>(_ cachable: T) where T.Key == Key, T.Value == Value {
         _get = cachable.get
         _set = cachable.set
         _delete = cachable.delete

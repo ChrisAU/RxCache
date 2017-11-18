@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public struct MemoryCache<K: Hashable, V>: Cachable, Countable, Limitable, Purgeable {
+public struct MemoryCache<K: Hashable, V>: Cacheable, Countable, Limitable, Purgeable {
     public typealias Key = K
     public typealias Value = V
     

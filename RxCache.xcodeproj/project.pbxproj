@@ -17,7 +17,7 @@
 		83BF0CA11F11538700F865BA /* MemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C991F11538700F865BA /* MemoryCache.swift */; };
 		83BF0CA21F11538700F865BA /* CompositeCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9A1F11538700F865BA /* CompositeCache.swift */; };
 		83BF0CA31F11538700F865BA /* Purgeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9B1F11538700F865BA /* Purgeable.swift */; };
-		83BF0CA41F11538700F865BA /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9C1F11538700F865BA /* Cachable.swift */; };
+		83BF0CA41F11538700F865BA /* Cacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9C1F11538700F865BA /* Cacheable.swift */; };
 		83BF0CA51F11538700F865BA /* Limitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9D1F11538700F865BA /* Limitable.swift */; };
 		83BF0CA61F11538700F865BA /* CacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9E1F11538700F865BA /* CacheError.swift */; };
 		83BF0CA71F11538700F865BA /* Expirable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BF0C9F1F11538700F865BA /* Expirable.swift */; };
@@ -52,7 +52,7 @@
 		83BF0C991F11538700F865BA /* MemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryCache.swift; sourceTree = "<group>"; };
 		83BF0C9A1F11538700F865BA /* CompositeCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeCache.swift; sourceTree = "<group>"; };
 		83BF0C9B1F11538700F865BA /* Purgeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Purgeable.swift; sourceTree = "<group>"; };
-		83BF0C9C1F11538700F865BA /* Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
+		83BF0C9C1F11538700F865BA /* Cacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cacheable.swift; sourceTree = "<group>"; };
 		83BF0C9D1F11538700F865BA /* Limitable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Limitable.swift; sourceTree = "<group>"; };
 		83BF0C9E1F11538700F865BA /* CacheError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheError.swift; sourceTree = "<group>"; };
 		83BF0C9F1F11538700F865BA /* Expirable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expirable.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		83BF0CA91F11538D00F865BA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				83BF0C9C1F11538700F865BA /* Cachable.swift */,
+				83BF0C9C1F11538700F865BA /* Cacheable.swift */,
 				83BF0CA01F11538700F865BA /* Countable.swift */,
 				83BF0C9F1F11538700F865BA /* Expirable.swift */,
 				83BF0C9D1F11538700F865BA /* Limitable.swift */,
@@ -371,7 +371,7 @@
 				8319EF2E1F1264A20036C5B0 /* AnyCacheable.swift in Sources */,
 				83BF0CA61F11538700F865BA /* CacheError.swift in Sources */,
 				83BF0CA71F11538700F865BA /* Expirable.swift in Sources */,
-				83BF0CA41F11538700F865BA /* Cachable.swift in Sources */,
+				83BF0CA41F11538700F865BA /* Cacheable.swift in Sources */,
 				83BF0CA31F11538700F865BA /* Purgeable.swift in Sources */,
 				83BF0CA21F11538700F865BA /* CompositeCache.swift in Sources */,
 				8301F29B1F118C6000EA996B /* UserDefaultsCache.swift in Sources */,

@@ -9,13 +9,13 @@
 import Foundation
 import RxSwift
 
-public struct CompositeCache<K, V>: Cachable, Purgeable {
+public struct CompositeCache<K, V>: Cacheable, Purgeable {
     public typealias Key = K
     public typealias Value = V
     
     private let sequence: Observable<AnyCacheable<Key, Value>>
     
-    public init<C: Cachable>(caches: [C]) where C.Key == Key, C.Value == Value {
+    public init<C: Cacheable>(caches: [C]) where C.Key == Key, C.Value == Value {
         let observables = caches.map({ $0.cache }).map(Observable.just)
         sequence = Observable.concat(observables)
     }
